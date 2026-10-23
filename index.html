@@ -1,0 +1,1005 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#151713">
+
+  <title>OTX Adventure | Himalayan Treks & Adventures</title>
+  <meta name="description" content="Discover Himalayan treks and mountain adventures with OTX Adventure in partnership with Adventure Saathi. Explore trekking packages and enquire directly on WhatsApp.">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+  <style>
+    :root {
+      --bg: #151713;
+      --surface: #20231d;
+      --surface-light: #292d25;
+      --yellow: #f5c842;
+      --orange: #ff813d;
+      --text: #f6f5ef;
+      --muted: #b5b9ad;
+      --border: rgba(255,255,255,.12);
+      --radius: 18px;
+      --max-width: 1160px;
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    html {
+      scroll-behavior: smooth;
+      scroll-padding-top: 85px;
+    }
+
+    body {
+      font-family: "DM Sans", sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a { color: inherit; text-decoration: none; }
+    img { display: block; width: 100%; object-fit: cover; }
+    button, input, select, textarea { font: inherit; }
+
+    .container {
+      width: min(var(--max-width), calc(100% - 40px));
+      margin-inline: auto;
+    }
+
+    .section { padding: 88px 0; }
+
+    .eyebrow {
+      color: var(--yellow);
+      font-size: .78rem;
+      font-weight: 700;
+      letter-spacing: .15em;
+      text-transform: uppercase;
+    }
+
+    .section-heading {
+      max-width: 680px;
+      margin-bottom: 35px;
+    }
+
+    .section-heading h2 {
+      font: 800 clamp(2rem, 4vw, 3.2rem)/1.15 "Manrope", sans-serif;
+      margin: 12px 0;
+      letter-spacing: -.04em;
+    }
+
+    .section-heading p,
+    .partner-copy p,
+    .enquiry-copy p { color: var(--muted); }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      gap: 9px;
+      min-height: 48px;
+      padding: 12px 22px;
+      border-radius: 8px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      font-weight: 700;
+      transition: transform .2s, background .2s;
+    }
+
+    .btn:hover { transform: translateY(-2px); }
+
+    .btn-primary {
+      background: var(--yellow);
+      color: #171811;
+    }
+
+    .btn-primary:hover { background: #ffda63; }
+
+    .btn-secondary {
+      border-color: rgba(255,255,255,.3);
+      color: var(--text);
+      background: rgba(0,0,0,.2);
+    }
+
+    .btn-secondary:hover { background: rgba(255,255,255,.1); }
+
+    /* Navigation */
+
+    .navbar {
+      position: sticky;
+      top: 0;
+      z-index: 20;
+      background: rgba(21,23,19,.93);
+      backdrop-filter: blur(14px);
+      border-bottom: 1px solid var(--border);
+    }
+
+    .nav-inner {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 11px;
+      font-family: "Manrope", sans-serif;
+      font-weight: 800;
+      letter-spacing: -.04em;
+      font-size: 1.25rem;
+    }
+
+    .brand-mark {
+      width: 38px;
+      height: 38px;
+      display: grid;
+      place-items: center;
+      background: var(--yellow);
+      color: #171811;
+      border-radius: 11px;
+      font-weight: 900;
+      font-size: .95rem;
+    }
+
+    .brand small {
+      display: block;
+      font: 500 .65rem "DM Sans", sans-serif;
+      letter-spacing: .09em;
+      color: var(--muted);
+      text-transform: uppercase;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 25px;
+      font-size: .92rem;
+      color: #dedfd8;
+    }
+
+    .nav-links a:hover { color: var(--yellow); }
+
+    /* Hero */
+
+    .hero {
+      min-height: 650px;
+      display: flex;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(90deg, rgba(13,16,13,.92), rgba(13,16,13,.67) 52%, rgba(13,16,13,.22)),
+        linear-gradient(0deg, rgba(21,23,19,.8), transparent 45%),
+        url("https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=2000&q=85")
+        center 48% / cover no-repeat;
+    }
+
+    .hero-content { max-width: 760px; padding: 95px 0; }
+
+    .partner-pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      border: 1px solid rgba(245,200,66,.45);
+      background: rgba(0,0,0,.3);
+      color: #ffe28a;
+      border-radius: 100px;
+      padding: 8px 13px;
+      font-size: .83rem;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 {
+      font: 800 clamp(2.8rem, 6.5vw, 5.6rem)/1.02 "Manrope", sans-serif;
+      letter-spacing: -.065em;
+      margin-bottom: 24px;
+    }
+
+    .hero h1 span { color: var(--yellow); }
+
+    .hero p {
+      color: #e0e1d9;
+      font-size: 1.08rem;
+      max-width: 590px;
+      margin-bottom: 30px;
+    }
+
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 12px; }
+
+    .hero .hero-note {
+      margin-top: 27px;
+      margin-bottom: 0;
+      color: #d1d3c9;
+      font-size: .83rem;
+    }
+
+    /* Trust strip */
+
+    .trust-strip {
+      background: #20231d;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .trust-inner {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+      padding: 23px 0;
+    }
+
+    .trust-item {
+      display: flex;
+      align-items: center;
+      gap: 12px;
+      color: #e4e5dd;
+      font-size: .92rem;
+    }
+
+    .trust-icon { color: var(--yellow); font-size: 1.3rem; }
+
+    /* Trek cards */
+
+    .trek-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 20px;
+    }
+
+    .trek-card {
+      overflow: hidden;
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      background: var(--surface);
+      transition: transform .2s, border-color .2s;
+    }
+
+    .trek-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(245,200,66,.5);
+    }
+
+    .trek-image {
+      height: 215px;
+      position: relative;
+      background: var(--surface-light);
+    }
+
+    .trek-image img { height: 100%; }
+
+    .trek-region {
+      position: absolute;
+      left: 13px;
+      top: 13px;
+      background: rgba(15,17,14,.85);
+      color: #fff;
+      padding: 6px 10px;
+      border-radius: 6px;
+      font-size: .76rem;
+      font-weight: 700;
+    }
+
+    .trek-body { padding: 19px; }
+
+    .trek-body h3 {
+      font: 700 1.15rem "Manrope", sans-serif;
+      margin-bottom: 9px;
+    }
+
+    .trek-body p {
+      color: var(--muted);
+      font-size: .88rem;
+      min-height: 48px;
+    }
+
+    .trek-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px 13px;
+      color: #d4d6cc;
+      font-size: .78rem;
+      padding: 15px 0;
+      border-bottom: 1px solid var(--border);
+      margin-bottom: 14px;
+    }
+
+    .trek-price {
+      display: flex;
+      align-items: baseline;
+      gap: 6px;
+      margin-bottom: 16px;
+    }
+
+    .trek-price strong {
+      font: 800 1.4rem "Manrope", sans-serif;
+      color: var(--yellow);
+    }
+
+    .trek-price span { font-size: .76rem; color: var(--muted); }
+
+    .trek-card .btn {
+      width: 100%;
+      min-height: 43px;
+      padding: 9px 12px;
+      font-size: .9rem;
+    }
+
+    .price-note {
+      color: var(--muted);
+      font-size: .82rem;
+      margin-top: 22px;
+    }
+
+    /* Partnership */
+
+    .partnership {
+      background: var(--surface);
+      border-block: 1px solid var(--border);
+    }
+
+    .partner-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      align-items: center;
+      gap: 55px;
+    }
+
+    .partner-visual {
+      min-height: 390px;
+      border-radius: 22px;
+      overflow: hidden;
+      background:
+        linear-gradient(0deg, rgba(0,0,0,.25), transparent),
+        url("https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=1100&q=85")
+        center / cover;
+    }
+
+    .partner-copy h2 {
+      font: 800 clamp(2rem, 4vw, 3.1rem)/1.13 "Manrope", sans-serif;
+      letter-spacing: -.045em;
+      margin: 12px 0 20px;
+    }
+
+    .partner-copy p { margin-bottom: 16px; }
+
+    .partner-points {
+      list-style: none;
+      margin: 24px 0;
+      display: grid;
+      gap: 12px;
+    }
+
+    .partner-points li { display: flex; gap: 11px; align-items: flex-start; }
+    .partner-points li span { color: var(--yellow); font-weight: 800; }
+
+    .partner-links { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 25px; }
+
+    /* Responsible travel */
+
+    .values-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .value-card {
+      background: var(--surface);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 25px;
+    }
+
+    .value-card .value-icon { font-size: 1.65rem; margin-bottom: 14px; }
+
+    .value-card h3 {
+      font: 700 1.1rem "Manrope", sans-serif;
+      margin-bottom: 8px;
+    }
+
+    .value-card p { color: var(--muted); font-size: .91rem; }
+
+    /* Enquiry */
+
+    .enquiry-section {
+      background:
+        radial-gradient(ellipse at top right, rgba(245,200,66,.1), transparent 45%),
+        var(--surface);
+      border-top: 1px solid var(--border);
+    }
+
+    .enquiry-layout {
+      display: grid;
+      grid-template-columns: .85fr 1.15fr;
+      gap: 55px;
+      align-items: start;
+    }
+
+    .enquiry-copy h2 {
+      font: 800 clamp(2rem, 4vw, 3.2rem)/1.12 "Manrope", sans-serif;
+      letter-spacing: -.045em;
+      margin: 12px 0 18px;
+    }
+
+    .enquiry-copy p { margin-bottom: 17px; }
+
+    .partner-attribution {
+      border: 1px solid rgba(245,200,66,.4);
+      background: rgba(245,200,66,.07);
+      border-radius: 12px;
+      padding: 15px 17px;
+      margin-top: 25px;
+    }
+
+    .partner-attribution strong {
+      display: block;
+      color: var(--yellow);
+      margin-bottom: 3px;
+    }
+
+    .partner-attribution span { color: var(--muted); font-size: .9rem; }
+
+    .enquiry-form {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 27px;
+    }
+
+    .form-title { font: 700 1.3rem "Manrope", sans-serif; margin-bottom: 5px; }
+    .form-subtitle { font-size: .86rem; color: var(--muted); margin-bottom: 22px; }
+
+    .form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 17px;
+    }
+
+    .form-field { display: flex; flex-direction: column; gap: 7px; }
+    .form-field.full { grid-column: 1 / -1; }
+
+    .form-field label {
+      font-size: .86rem;
+      font-weight: 600;
+      color: #e4e5dd;
+    }
+
+    .form-field input,
+    .form-field select,
+    .form-field textarea {
+      width: 100%;
+      min-height: 47px;
+      border: 1px solid #3a3e34;
+      background: #20231d;
+      color: var(--text);
+      padding: 11px 12px;
+      border-radius: 8px;
+      outline: none;
+    }
+
+    .form-field input:focus,
+    .form-field select:focus,
+    .form-field textarea:focus { border-color: var(--yellow); }
+
+    .form-field textarea { resize: vertical; min-height: 105px; }
+
+    .form-field input::placeholder,
+    .form-field textarea::placeholder { color: #898e82; }
+
+    .form-field select option { background: #20231d; }
+
+    .enquiry-form .btn { width: 100%; margin-top: 20px; border: 0; }
+
+    .form-disclaimer {
+      margin-top: 13px;
+      font-size: .76rem;
+      color: var(--muted);
+      text-align: center;
+    }
+
+    /* Footer */
+
+    .footer { padding: 42px 0 24px; border-top: 1px solid var(--border); }
+
+    .footer-top {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      gap: 30px;
+      padding-bottom: 30px;
+    }
+
+    .footer-brand p {
+      color: var(--muted);
+      max-width: 370px;
+      font-size: .88rem;
+      margin-top: 13px;
+    }
+
+    .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      color: #d5d7cd;
+      font-size: .88rem;
+    }
+
+    .footer-links a:hover { color: var(--yellow); }
+
+    .footer-bottom {
+      border-top: 1px solid var(--border);
+      padding-top: 20px;
+      display: flex;
+      justify-content: space-between;
+      gap: 18px;
+      flex-wrap: wrap;
+      color: var(--muted);
+      font-size: .8rem;
+    }
+
+    .footer-bottom a { color: #dedfd8; }
+    .disclaimer { max-width: 760px; }
+
+    /* Floating WhatsApp */
+
+    .whatsapp-float {
+      position: fixed;
+      bottom: 22px;
+      right: 22px;
+      z-index: 30;
+      background: #25d366;
+      color: #082b16;
+      border-radius: 100px;
+      padding: 13px 18px;
+      font-weight: 800;
+      box-shadow: 0 8px 28px rgba(0,0,0,.3);
+    }
+
+    .whatsapp-float:hover { background: #51e184; }
+
+    @media (max-width: 1000px) {
+      .trek-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+      .partner-layout, .enquiry-layout { grid-template-columns: 1fr; gap: 32px; }
+      .partner-visual { min-height: 320px; order: 2; }
+      .enquiry-copy { max-width: 650px; }
+    }
+
+    @media (max-width: 700px) {
+      .container { width: min(100% - 30px, var(--max-width)); }
+      .section { padding: 62px 0; }
+      .nav-inner { min-height: 68px; }
+      .nav-links { gap: 13px; font-size: .82rem; }
+      .nav-links a:not(.nav-cta) { display: none; }
+      .nav-cta { padding: 9px 13px; min-height: 40px; }
+      .hero { min-height: 590px; background-position: 57% center; }
+      .hero-content { padding: 76px 0; }
+      .hero h1 { font-size: clamp(2.7rem, 12vw, 4.3rem); }
+      .trust-inner { grid-template-columns: 1fr; gap: 13px; }
+      .trek-grid, .values-grid { grid-template-columns: 1fr; }
+      .trek-image { height: 235px; }
+      .form-grid { grid-template-columns: 1fr; }
+      .form-field.full { grid-column: auto; }
+      .enquiry-form { padding: 20px; }
+      .footer-top { flex-direction: column; }
+      .partner-visual { min-height: 260px; }
+      .whatsapp-float { right: 14px; bottom: 14px; padding: 11px 14px; font-size: .88rem; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition-duration: .01ms !important; }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="navbar">
+    <div class="container nav-inner">
+      <a href="#home" class="brand" aria-label="OTX Adventure home">
+        <span class="brand-mark">OTX</span>
+        <span>OTX Adventure<small>Discover & Explore</small></span>
+      </a>
+
+      <nav class="nav-links" aria-label="Main navigation">
+        <a href="#treks">Treks</a>
+        <a href="#partnership">Our Partner</a>
+        <a href="#responsible">Our Approach</a>
+        <a href="#enquiry" class="btn btn-primary nav-cta">Enquire Now</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container">
+        <div class="hero-content">
+          <div class="partner-pill">OTX Adventure × Adventure Saathi</div>
+          <p class="eyebrow">Your next mountain story starts here</p>
+          <h1>Find your path.<br><span>Feel the wild.</span></h1>
+          <p>
+            Discover Himalayan trails, breathtaking landscapes and unforgettable
+            outdoor experiences. Explore trekking options with OTX Adventure,
+            in partnership with Adventure Saathi.
+          </p>
+          <div class="hero-actions">
+            <a href="#treks" class="btn btn-primary">Explore Treks &rarr;</a>
+            <a href="#enquiry" class="btn btn-secondary">Plan Your Adventure</a>
+          </div>
+          <p class="hero-note">
+            Trek dates, prices and availability are subject to confirmation by Adventure Saathi.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <section class="trust-strip" aria-label="Our approach">
+      <div class="container trust-inner">
+        <div class="trust-item"><span class="trust-icon">&#10003;</span> Explore established trekking packages</div>
+        <div class="trust-item"><span class="trust-icon">&#8594;</span> Enquire directly through WhatsApp</div>
+        <div class="trust-item"><span class="trust-icon">&#9968;</span> Discover the Himalayas responsibly</div>
+      </div>
+    </section>
+
+    <section class="section" id="treks">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Explore the trails</p>
+          <h2>Your next adventure awaits.</h2>
+          <p>
+            From snowy summit trails to lush Himalayan valleys, find a trek that
+            matches your interests. Select a trek to start your enquiry.
+          </p>
+        </div>
+
+        <div class="trek-grid">
+          <article class="trek-card">
+            <div class="trek-image">
+              <img src="https://images.unsplash.com/photo-1464822759023-fed622ff2c3b?auto=format&fit=crop&w=900&q=80" alt="Snow-covered Himalayan mountain peaks" loading="lazy">
+              <span class="trek-region">Uttarakhand</span>
+            </div>
+            <div class="trek-body">
+              <h3>Kedarkantha Trek</h3>
+              <p>A popular Himalayan trek known for forest trails and snowy mountain scenery.</p>
+              <div class="trek-meta"><span>6 days</span><span>20 km</span><span>12,500 ft</span></div>
+              <div class="trek-price"><strong>₹9,499</strong><span>/ person*</span></div>
+              <button class="btn btn-secondary trek-enquire" type="button" data-trek="Kedarkantha Trek">Enquire About This Trek</button>
+            </div>
+          </article>
+
+          <article class="trek-card">
+            <div class="trek-image">
+              <img src="https://images.unsplash.com/photo-1464278533981-50106e6176b1?auto=format&fit=crop&w=900&q=80" alt="Mountain valley surrounded by dramatic peaks" loading="lazy">
+              <span class="trek-region">Himachal Pradesh</span>
+            </div>
+            <div class="trek-body">
+              <h3>Hampta Pass Crossing</h3>
+              <p>A dramatic mountain crossing through changing landscapes and high-altitude terrain.</p>
+              <div class="trek-meta"><span>5 days</span><span>26 km</span><span>14,100 ft</span></div>
+              <div class="trek-price"><strong>₹11,999</strong><span>/ person*</span></div>
+              <button class="btn btn-secondary trek-enquire" type="button" data-trek="Hampta Pass Crossing">Enquire About This Trek</button>
+            </div>
+          </article>
+
+          <article class="trek-card">
+            <div class="trek-image">
+              <img src="https://images.unsplash.com/photo-1472396961693-142e6e269027?auto=format&fit=crop&w=900&q=80" alt="Natural mountain landscape with a green valley" loading="lazy">
+              <span class="trek-region">Uttarakhand</span>
+            </div>
+            <div class="trek-body">
+              <h3>Valley of Flowers</h3>
+              <p>Explore a celebrated Himalayan valley known for its alpine flora and scenery.</p>
+              <div class="trek-meta"><span>6 days</span><span>38 km</span><span>11,500 ft</span></div>
+              <div class="trek-price"><strong>₹10,999</strong><span>/ person*</span></div>
+              <button class="btn btn-secondary trek-enquire" type="button" data-trek="Valley of Flowers">Enquire About This Trek</button>
+            </div>
+          </article>
+
+          <article class="trek-card">
+            <div class="trek-image">
+              <img src="https://images.unsplash.com/photo-1500530855697-b586d89ba3ee?auto=format&fit=crop&w=900&q=80" alt="Expansive mountain terrain beneath an open sky" loading="lazy">
+              <span class="trek-region">Ladakh</span>
+            </div>
+            <div class="trek-body">
+              <h3>Markha Valley Trek</h3>
+              <p>A high-altitude Ladakh adventure through remote valleys and rugged terrain.</p>
+              <div class="trek-meta"><span>7 days</span><span>64 km</span><span>17,060 ft</span></div>
+              <div class="trek-price"><strong>₹16,499</strong><span>/ person*</span></div>
+              <button class="btn btn-secondary trek-enquire" type="button" data-trek="Markha Valley Trek">Enquire About This Trek</button>
+            </div>
+          </article>
+        </div>
+
+        <p class="price-note">
+          *Indicative prices and package details may change. Confirm current rates,
+          dates, inclusions, fitness requirements and availability with Adventure
+          Saathi before making a booking.
+        </p>
+
+        <div style="margin-top:28px">
+          <a href="https://adventuresaathi.com/" target="_blank" rel="noopener noreferrer" class="btn btn-secondary">
+            Explore More Adventures at Adventure Saathi &rarr;
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <section class="section partnership" id="partnership">
+      <div class="container partner-layout">
+        <div class="partner-visual" role="img" aria-label="Outdoor mountain scenery"></div>
+
+        <div class="partner-copy">
+          <p class="eyebrow">A partnership built for exploration</p>
+          <h2>OTX Adventure × Adventure Saathi</h2>
+          <p>
+            OTX Adventure connects travellers with trekking experiences in
+            collaboration with Adventure Saathi, an adventure travel provider
+            offering mountain trips and guided outdoor experiences.
+          </p>
+          <p>
+            Our goal is to make discovering a suitable adventure and starting
+            your booking enquiry straightforward.
+          </p>
+
+          <ul class="partner-points">
+            <li><span>&#10003;</span><div>Browse selected trekking options and share your travel preferences.</div></li>
+            <li><span>&#10003;</span><div>Send your enquiry through WhatsApp with OTX Adventure partner attribution.</div></li>
+            <li><span>&#10003;</span><div>Confirm the final itinerary, availability, pricing and booking terms with Adventure Saathi.</div></li>
+          </ul>
+
+          <div class="partner-links">
+            <a href="https://adventuresaathi.com/" target="_blank" rel="noopener noreferrer" class="btn btn-primary">Visit Adventure Saathi</a>
+            <a href="#enquiry" class="btn btn-secondary">Send an Enquiry</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="responsible">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Adventure with awareness</p>
+          <h2>Explore thoughtfully.</h2>
+          <p>
+            The mountains deserve respect. Prepare well, follow local guidance
+            and help preserve the landscapes you visit.
+          </p>
+        </div>
+
+        <div class="values-grid">
+          <article class="value-card">
+            <div class="value-icon" aria-hidden="true">&#9968;</div>
+            <h3>Prepare for the trail</h3>
+            <p>Review the trek's difficulty, altitude, fitness requirements and equipment checklist before confirming.</p>
+          </article>
+          <article class="value-card">
+            <div class="value-icon" aria-hidden="true">&#10003;</div>
+            <h3>Follow local guidance</h3>
+            <p>Follow your trek leader's instructions, respect local customs and adhere to safety requirements.</p>
+          </article>
+          <article class="value-card">
+            <div class="value-icon" aria-hidden="true">&#127793;</div>
+            <h3>Leave no trace</h3>
+            <p>Minimise waste, avoid disturbing wildlife and help keep mountain trails clean for future explorers.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section enquiry-section" id="enquiry">
+      <div class="container enquiry-layout">
+        <div class="enquiry-copy">
+          <p class="eyebrow">Start planning</p>
+          <h2>Let's plan your next adventure.</h2>
+          <p>
+            Tell us which trek interests you, when you want to travel and how
+            many people are joining. We'll prepare an enquiry for Adventure
+            Saathi on WhatsApp.
+          </p>
+          <p>
+            Submitting this form opens WhatsApp with your details filled in.
+            You can review the message before sending it.
+          </p>
+
+          <div class="partner-attribution">
+            <strong>Travel Partner: OTX Adventure</strong>
+            <span>Website: adventure.otxs.de</span>
+            <span style="display:block;margin-top:5px">
+              Every enquiry message will identify OTX Adventure as the referral partner.
+            </span>
+          </div>
+        </div>
+
+        <form class="enquiry-form" id="trekEnquiryForm">
+          <h3 class="form-title">Trek Enquiry</h3>
+          <p class="form-subtitle">Share a few details to get started.</p>
+
+          <!-- Partner attribution: included in the WhatsApp message below -->
+          <input type="hidden" name="travel_partner" value="OTX Adventure">
+          <input type="hidden" name="partner_website" value="adventure.otxs.de">
+          <input type="hidden" name="booking_partner" value="Adventure Saathi">
+
+          <div class="form-grid">
+            <div class="form-field">
+              <label for="name">Your name *</label>
+              <input id="name" name="name" type="text" placeholder="Enter your name" autocomplete="name" required>
+            </div>
+
+            <div class="form-field">
+              <label for="phone">Contact number</label>
+              <input id="phone" name="phone" type="tel" placeholder="Include country code if needed" autocomplete="tel">
+            </div>
+
+            <div class="form-field full">
+              <label for="trek">Choose a trek *</label>
+              <select id="trek" name="trek" required>
+                <option value="">Select a trek</option>
+                <option value="Kedarkantha Trek">Kedarkantha Trek</option>
+                <option value="Hampta Pass Crossing">Hampta Pass Crossing</option>
+                <option value="Valley of Flowers">Valley of Flowers</option>
+                <option value="Markha Valley Trek">Markha Valley Trek</option>
+                <option value="Other / Need a recommendation">Other / Need a recommendation</option>
+              </select>
+            </div>
+
+            <div class="form-field">
+              <label for="date">Preferred travel date</label>
+              <input id="date" name="date" type="date">
+            </div>
+
+            <div class="form-field">
+              <label for="groupSize">Number of travellers *</label>
+              <select id="groupSize" name="groupSize" required>
+                <option value="">Select group size</option>
+                <option value="1 traveller">1</option>
+                <option value="2 travellers">2</option>
+                <option value="3–4 travellers">3–4</option>
+                <option value="5–8 travellers">5–8</option>
+                <option value="9+ travellers">9 or more</option>
+              </select>
+            </div>
+
+            <div class="form-field full">
+              <label for="notes">Additional details</label>
+              <textarea id="notes" name="notes" placeholder="Tell us about your experience level, preferred dates or any questions."></textarea>
+            </div>
+          </div>
+
+          <button class="btn btn-primary" type="submit">Continue to WhatsApp &rarr;</button>
+
+          <p class="form-disclaimer">
+            This is an enquiry, not a confirmed booking. Final availability,
+            price and booking terms must be confirmed with Adventure Saathi.
+          </p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-top">
+        <div class="footer-brand">
+          <a href="#home" class="brand">
+            <span class="brand-mark">OTX</span>
+            <span>OTX Adventure<small>Discover & Explore</small></span>
+          </a>
+          <p>
+            Discover trekking and outdoor experiences through our partnership
+            with Adventure Saathi.
+          </p>
+        </div>
+
+        <nav class="footer-links" aria-label="Footer navigation">
+          <a href="#treks">Explore Treks</a>
+          <a href="#partnership">Our Partner</a>
+          <a href="#enquiry">Enquire</a>
+          <a href="https://otxs.de/" target="_blank" rel="noopener noreferrer">OTX Services</a>
+          <a href="https://adventuresaathi.com/" target="_blank" rel="noopener noreferrer">Adventure Saathi</a>
+        </nav>
+      </div>
+
+      <div class="footer-bottom">
+        <p>&copy; <span id="currentYear"></span> OTX Adventure. All rights reserved.</p>
+        <p class="disclaimer">
+          Trekking packages are subject to confirmation by Adventure Saathi.
+          Prices and itineraries may change. Please verify all details with the
+          booking provider before payment.
+        </p>
+      </div>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" id="floatingWhatsApp" href="https://wa.me/918808970991"
+     target="_blank" rel="noopener noreferrer" aria-label="Contact Adventure Saathi on WhatsApp">
+    WhatsApp Enquiry
+  </a>
+
+  <script>
+    /*
+      OTX Adventure partner attribution.
+      Each WhatsApp enquiry identifies the source website so Adventure Saathi
+      can recognise enquiries coming from adventure.otxs.de.
+    */
+
+    const PARTNER_NAME = "OTX Adventure";
+    const PARTNER_WEBSITE = "adventure.otxs.de";
+    const BOOKING_PARTNER = "Adventure Saathi";
+
+    // Adventure Saathi WhatsApp number, international format without "+".
+    const WHATSAPP_NUMBER = "918808970991";
+
+    function buildWhatsAppUrl(message) {
+      return "https://wa.me/" + WHATSAPP_NUMBER +
+        "?text=" + encodeURIComponent(message);
+    }
+
+    function buildMessage(details = {}) {
+      return [
+        "Hello Adventure Saathi,",
+        "",
+        "I would like to enquire about a trekking package.",
+        "",
+        "Travel Partner: " + PARTNER_NAME,
+        "Website: " + PARTNER_WEBSITE,
+        "Booking Partner: " + BOOKING_PARTNER,
+        "",
+        "Name: " + (details.name || "Not provided"),
+        "Contact Number: " + (details.phone || "Not provided"),
+        "Trek: " + (details.trek || "Need a recommendation"),
+        "Preferred Travel Date: " + (details.date || "Flexible / Not decided"),
+        "Group Size: " + (details.groupSize || "Not specified"),
+        "Additional Details: " + (details.notes || "None provided"),
+        "",
+        "Please share current availability, final pricing, inclusions and booking details.",
+        "",
+        "Enquiry submitted through OTX Adventure at adventure.otxs.de."
+      ].join("\n");
+    }
+
+    // Trek buttons select the relevant trek in the enquiry form.
+    document.querySelectorAll(".trek-enquire").forEach(function(button) {
+      button.addEventListener("click", function() {
+        document.getElementById("trek").value = button.dataset.trek;
+
+        document.getElementById("enquiry").scrollIntoView({
+          behavior: "smooth"
+        });
+
+        document.getElementById("trek").focus({ preventScroll: true });
+      });
+    });
+
+    // Form submission opens WhatsApp with all details and partner attribution.
+    document.getElementById("trekEnquiryForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+
+      const form = event.currentTarget;
+      if (!form.reportValidity()) return;
+
+      const details = {
+        name: form.elements.name.value.trim(),
+        phone: form.elements.phone.value.trim(),
+        trek: form.elements.trek.value,
+        date: form.elements.date.value,
+        groupSize: form.elements.groupSize.value,
+        notes: form.elements.notes.value.trim()
+      };
+
+      const message = buildMessage(details);
+      window.open(buildWhatsAppUrl(message), "_blank", "noopener,noreferrer");
+    });
+
+    // Floating WhatsApp button also identifies OTX Adventure as the source.
+    document.getElementById("floatingWhatsApp").href = buildWhatsAppUrl(
+      buildMessage({ trek: "General trekking enquiry" })
+    );
+
+    document.getElementById("currentYear").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
+
